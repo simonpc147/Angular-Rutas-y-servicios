@@ -1,0 +1,36 @@
+<p>egreso works!</p>
+
+<div>
+    <div>
+        <form (ngSubmit)="buscar()">
+            <input 
+            type="text" 
+            name="termino"
+            placeholder="buscar Capital" 
+            [(ngModel)]="termino"
+            >
+        </form>
+    </div>
+ </div>
+
+ <div *ngIf="hayError" 
+      class="alerta">
+ No se encontro el termino {{ termino }}
+ </div>
+
+
+ <table>
+    <tbody>
+        <tr *ngFor="let Capital of capitales; let i = index">
+           
+            <td>{{ i + 1 }}</td>
+            <td><img [src]="Capital.coatOfArms.png" style="width: 40px;" alt=""></td>
+            <td> {{Capital.flag}} </td>
+            <td> {{Capital.capital}}, {{Capital.name.common}} </td>
+            <td> {{Capital.population}} </td>
+           
+            <td> <a [routerLink]="[ '/usuarios', Capital.name.nativeName]"> ver mas...</a></td>
+           
+        </tr>
+    </tbody>
+ </table>

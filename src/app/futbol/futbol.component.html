@@ -1,0 +1,68 @@
+<style>
+td {
+    padding: 35px;
+    text-align: center;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+}
+
+.Datos {
+    font-size: 1.5rem;
+    white-space: pre;
+}
+input {
+    display: flex;
+    font-size: 1.2rem;
+    width: 15.5cm;
+    margin: 25px;
+    margin-inline: auto;
+  }
+
+
+</style>
+
+<div class="container">
+
+
+    <input 
+    class="Buscador" 
+    placeholder="Buscar altoins..." 
+    type="text" 
+    (keyup)="busquedaCoins()" 
+    [(ngModel)]="busquedaText">    
+
+    <table>
+        <div class="Datos">
+            <thead>
+                <tr>
+                    <th *ngFor="let title of Titles">
+                        {{title}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let Crypto of filtercoins">
+          
+                <td> 
+                    <img [src]="Crypto.image" style="width: 2rem;"> 
+                </td>
+                <td>
+                    {{Crypto.name}}
+                </td>
+                
+                <td>
+                    {{Crypto.symbol}}
+                </td>
+                <td>
+                    {{Crypto.current_price}}
+                </td>
+                
+              </tr>
+            </tbody>
+        </div>
+      </table>
+
+</div>

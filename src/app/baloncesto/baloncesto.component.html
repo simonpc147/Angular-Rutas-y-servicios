@@ -1,0 +1,22 @@
+<p>baloncesto works!</p>
+
+    <input 
+    type = "text" 
+    placeholder = "Buscar Cryptomoneda"
+    (keyup) = "BuscarCrypto()" 
+    [(ngModel)] = "BusquedaText"
+    >
+
+<table>
+    <tbody>
+
+        <tr *ngFor="let Cyptomonda of filterCrypto">
+            
+            <td><img [src]="Cyptomonda.image" style="width: 2rem;" alt=""> </td>
+            <td> {{Cyptomonda.name}} </td>
+            <td> {{Cyptomonda.symbol}} </td>
+            <td> {{Cyptomonda.current_price}} </td>
+            
+        </tr>
+    </tbody>
+</table>
